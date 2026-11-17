@@ -4,7 +4,8 @@ Bản dự thảo dựa trên Git; cần bổ sung họ tên, MSSV và đổi t�
 
 ## 1. Thông tin thành viên
 
-- Họ tên, MSSV: chưa có trong dữ liệu đã kiểm tra.
+- Họ tên: Đào Thị Ngọc Ánh
+- MSSV: 2A202603790
 - Git author/GitHub: daoanh9503.
 - Email tác giả commit: daoanh9503@gmail.com.
 - Nhánh: `feature/single-agent`.
