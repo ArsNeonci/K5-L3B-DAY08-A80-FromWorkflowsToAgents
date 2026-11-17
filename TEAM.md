@@ -2,11 +2,11 @@
 
 ## Thông tin nhóm
 
-- Tên nhóm: A80 (theo tên repo)
-- Leader: Chu Quang Linh — 2A202603809 (kiêm C: Orchestrator).
-- Lớp: Chờ xác nhận giữa L3B trong tên repo hiện tại và L3A trong [SUBMISSION.md](SUBMISSION.md).
-- Repo nhóm: [K5-L3B-DAY08-A80-FromWorkflowsToAgents](https://github.com/ArsNeonci/K5-L3B-DAY08-A80-FromWorkflowsToAgents)
-- Nhánh dùng để kiểm tra hồ sơ: `main`. Code kiểm thử ở commit `11c6883`, khớp với [ADR](report/team/decision_adr.md). Báo cáo ablation dẫn riêng bản `develop` tại `f1595d5`.
+- Tên nhóm: A80
+- Lớp: L3B
+- Repo nhóm: K5-L3B-DAY08-A80-FromWorkflowsToAgents
+- Url: https://github.com/ArsNeonci/K5-L3B-DAY08-A80-FromWorkflowsToAgents
+- Nhánh: `main`
 
 ## Thành viên
 
@@ -30,7 +30,6 @@
 | 4 — Chu Quang Linh | Trưởng nhóm, Orchestrator, handoff và test an toàn | `a42312c` (code và test), `b58ba74` (bàn giao) | `src/tests/test_orchestrator_shape.py` |
 | 5 — Nguyễn Minh Quân | Tổng hợp bằng chứng, cập nhật `TEAM.md` và kiểm tra hồ sơ | `f824917` (tài liệu và test hồ sơ) | `src/tests/test_adr_required_fields.py` |
 
-Các nhánh của Hà, Ánh và Linh đã được tích hợp vào main qua `a0003e4` và các commit cha. Các sản phẩm riêng của draft develop chưa được coi là đã nộp. Leader Chu Quang Linh điều phối tích hợp, kiểm thử và chốt hồ sơ; Nguyễn Minh Quân phụ trách tổng hợp báo cáo.
 
 Báo cáo hiện có:
 
@@ -41,7 +40,6 @@ Báo cáo hiện có:
 - [Vũ Duy Khánh](report/team/2A202603865-VuDuyKhanh.md).
 - [Bàn giao Orchestrator](report/team/orchestrator_handoff.md).
 
-Hai báo cáo của Khánh và Ánh đã được bổ sung thông tin thành viên. Mỗi thành viên xác nhận phần khai báo dùng AI và tự đánh giá của mình trước khi nộp.
 
 ## Phân công bonus B3
 
