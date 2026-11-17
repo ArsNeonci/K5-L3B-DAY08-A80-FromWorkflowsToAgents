@@ -65,5 +65,6 @@ MockLLM mô phỏng lời gọi model. Các kết quả hiện tại phản ánh
 
 ## 8. Tài liệu tham khảo và bằng chứng
 
+- Bonus B3 đã bổ sung: [báo cáo verifier cho Swarm](bonus_report.md), [public](../../src/reports/bonus_b3_public.json) và [10 claim đối kháng](../../src/reports/bonus_b3_adversarial.json). Số liệu bonus được đo trên main hiện tại; tách biệt với thí nghiệm R1 ở develop. Điều kiện nhận bonus vẫn chờ hidden chính thức.
 - [Luật nghiệp vụ](../../docs/business_rules.md), [contract](../../docs/contracts.md), [kiến trúc](../../docs/architecture.md) và [cách tính chỉ số](../../docs/metrics.md).
 - [Benchmark public](../../src/reports/benchmark.json), [crash suite](../../src/reports/crash.json), [benchmark đối kháng](https://github.com/ArsNeonci/K5-L3B-DAY08-A80-FromWorkflowsToAgents/blob/f1595d5b3ebee52b2d69e12f1704a93afb6192dd/src/reports/adversarial_benchmark.json) và [ablation R1](https://github.com/ArsNeonci/K5-L3B-DAY08-A80-FromWorkflowsToAgents/blob/f1595d5b3ebee52b2d69e12f1704a93afb6192dd/src/reports/ablation_r1.json). Hai báo cáo đầu thuộc lượt chạy trên main. Hai báo cáo sau thuộc bản develop.
