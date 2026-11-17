@@ -1,6 +1,7 @@
 # Bàn giao C: Orchestrator — Chu Quang Linh
 
 - Thành viên: Chu Quang Linh — 2A202603809.
+- Vai trò cập nhật: leader kiêm C: Orchestrator; phối hợp thành viên 5 tổng hợp báo cáo.
 - Commit code/test: `a42312c`.
 - Nền starter: `034c6c4`; nguồn draft Orchestrator/test: `develop` tại `f9a6c80`.
 - File triển khai: `src/lab8/shapes/orchestrator.py`.
@@ -61,7 +62,7 @@ python -m pytest -q -m student -o addopts= -k orchestrator
 
 Kết quả chạy lại trên Python 3.12.6/Windows: lần lượt **63 passed, 248 deselected** và **62 passed, 249 deselected**. Test bổ sung kiểm allowlist và quyền đọc, không đưa ticket vào model investigator, trace sạch, host chặn approval sai claim có audit, và fallback khi thiếu quote. T11/T12 của ma trận student kiểm retry/crash-resume.
 
-Không chạy toàn bộ ma trận student để kết luận cả nhóm đã hoàn thành: hai shape khác đang là stub. `check_submission` của toàn nhóm cũng cần benchmark, crash report và các báo cáo chung được leader hoàn thiện sau tích hợp.
+Các kết quả 63/62 trên thuộc bản bàn giao riêng `a42312c`, khi hai shape khác còn là stub. Bản tích hợp `a0003e4` đã có cả A/B/C và ghi nhận 90 test mặc định cùng 248 test student pass. Điều này chưa thay thế benchmark, crash report và báo cáo chung mà leader Chu Quang Linh cần phối hợp hoàn thiện trước khi nộp.
 
 ## Giới hạn và lưu ý tích hợp
 
@@ -78,4 +79,5 @@ Không chạy toàn bộ ma trận student để kết luận cả nhóm đã ho
 - [x] Mô tả luồng, quyền, handoff, trace và giới hạn.
 - [x] Báo cáo cá nhân và dòng đóng góp trong `TEAM.md`.
 - [ ] Thành viên tự chạy lại và chuẩn bị giải thích khi bảo vệ.
-- [ ] Leader tích hợp vào bài nhóm và kiểm tra trước khi nộp.
+- [x] Tích hợp A/B/C vào main và chạy test chung tại `a0003e4`.
+- [ ] Leader Chu Quang Linh phối hợp hoàn thiện hồ sơ và kiểm tra trước khi nộp.

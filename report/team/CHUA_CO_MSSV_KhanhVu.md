@@ -8,7 +8,7 @@ Bản dự thảo dựa trên Git; chưa có MSSV, họ tên đầy đủ đư�
 - MSSV/GitHub: chưa xác định từ lịch sử đã kiểm tra.
 - Email trong Git là địa chỉ local của máy, chưa dùng làm email liên hệ.
 - Nhánh chứa đóng góp: `develop`, commit `f9a6c80`.
-- Vai trò có bằng chứng: tạo draft chung gồm code, test, thí nghiệm và tài liệu; chưa đủ dữ liệu xác nhận chức danh leader.
+- Vai trò có bằng chứng: tạo draft chung gồm code, test, thí nghiệm và tài liệu. Leader theo phân công hiện tại là Chu Quang Linh — 2A202603809.
 
 ## 2. Phần việc phụ trách
 

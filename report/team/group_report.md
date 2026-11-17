@@ -5,6 +5,7 @@ Tối đa 5 trang ngoài phụ lục. Số liệu lấy từ file trong `src/rep
 ## 1. Thông tin nhóm
 
 - Tên nhóm:
+- Leader: Chu Quang Linh — 2A202603809, kiêm C: Orchestrator và tích hợp. Thành viên 5 phụ trách tổng hợp báo cáo.
 - Thành viên: xem `TEAM.md`
 - Commit chốt (trùng `report/team/decision_adr.md`):
 
