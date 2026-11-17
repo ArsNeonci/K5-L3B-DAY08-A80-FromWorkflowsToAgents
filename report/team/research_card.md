@@ -27,8 +27,8 @@ Phần này nối tiếp phần mini research ở buổi lý thuyết (slide 62�
 
 ## Kết quả ablation
 
-- Lệnh ghi trong bản tích hợp (chạy từ `src/`): `python -m lab8.benchmark --shapes orchestrator,orchestrator_2inv --extra-shape orchestrator_2inv=ablation.orchestrator_two_investigators:run_claim --cases data/public_claims.jsonl --seeds 11,22,33,44,55 --out reports/ablation_r1.json`
-- Run id / file report: `R-orchestrator-C-014-s11` và `R-orchestrator_2inv-C-014-s11`. Số liệu lấy từ [ablation_r1.json](../../src/reports/ablation_r1.json) tại commit tích hợp `f1595d5`.
+- Lệnh ghi trong bản tích hợp (chạy từ `src/` của commit `f1595d5`): `python -m lab8.benchmark --shapes orchestrator,orchestrator_2inv --extra-shape orchestrator_2inv=ablation.orchestrator_two_investigators:run_claim --cases data/public_claims.jsonl --seeds 11,22,33,44,55 --out reports/ablation_r1.json`
+- Run id / file report: `R-orchestrator-C-014-s11` và `R-orchestrator_2inv-C-014-s11`. Số liệu lấy từ [ablation_r1.json](https://github.com/ArsNeonci/K5-L3B-DAY08-A80-FromWorkflowsToAgents/blob/f1595d5b3ebee52b2d69e12f1704a93afb6192dd/src/reports/ablation_r1.json) tại bản develop `f1595d5`.
 - **Kết quả phù hợp với giả thuyết.** Hai cấu hình đều đạt 70/70, pass^5 = 100% và phương sai theo seed bằng 0. Cost/success tăng từ 59.12 lên 69.98 VND (+18.4%). Số lần gọi model trung bình tăng từ 2.86 lên 3.79, số lần gọi công cụ tăng từ 5.57 lên 6.50.
 - Giới hạn của kết quả. Bộ public có 14 claim và cấu hình một investigator đã đạt trần 100%. Hai nhóm công cụ chạy tuần tự, latency là `unavailable`. Kết luận về chi phí áp dụng cho MockLLM và bảng giá mô phỏng của lab.
 

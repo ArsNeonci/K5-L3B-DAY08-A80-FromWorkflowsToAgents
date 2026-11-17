@@ -3,9 +3,7 @@
 ## 1. Thông tin nhóm
 
 - Nhóm A80. Trưởng nhóm Chu Quang Linh — 2A202603809, kiêm C: Orchestrator và tích hợp; Nguyễn Minh Quân tổng hợp báo cáo. Danh sách thành viên và bảng đóng góp nằm trong [TEAM.md](../../TEAM.md).
-- Bản tích hợp dùng để đối chiếu code và số liệu là `develop` tại `f1595d5`. Commit nộp chính thức sẽ được cập nhật cùng [ADR](decision_adr.md) khi nhóm chốt hồ sơ.
-
-Ghi chú tích hợp: các số liệu và ablation dưới đây được thành viên 5 đối chiếu từ draft develop. Main hiện có A/B/C từ các nhánh cá nhân nhưng chưa có bộ report/ablation đó trong cây file; cần tái lập bằng chứng trên bản chốt, không coi develop đã được merge.
+- Benchmark public và crash suite chạy với code trên `main` tại `11c6883`, khớp [ADR](decision_adr.md). Bộ đối kháng và ablation lấy từ bản `develop` tại `f1595d5`.
 
 ## 2. Mục tiêu và cách tiếp cận
 
@@ -38,9 +36,9 @@ Nhóm dùng Workflow làm đường cơ sở, triển khai Single agent và Orch
 | swarm | 69/70 (98.57%) | 92.86% | 92.86%–100.00% | 0.000816 | 49.57 | 2.80 / 3 |
 
 - **Ca Swarm sai ở seed 55.** `R-swarm-C-002-s55` dùng số ngày trễ ghi trong ticket (5 ngày), trong khi dữ liệu đơn ghi 2 ngày. Thử nghiệm tương ứng `R-workflow-C-002-s55` đạt yêu cầu từ chối hoàn.
-- **Crash và an toàn.** Crash suite ghi nhận **20/20**. Trong benchmark public và bộ đối kháng, cả ba kiến trúc nhóm viết đạt mọi trial theo evaluator, bao gồm các ca phải từ chối hoàn do approval và các ca có chuỗi cần bảo vệ. Các số liệu này thuộc bộ kiểm tra đã chạy. Chưa có kết quả chấm hidden chính thức trong bản tích hợp dùng cho báo cáo.
-- **Bộ đối kháng.** Trên 17 claim × 5 seed, Workflow, Single và Orchestrator cùng đạt **85/85**. Swarm đạt **84/85**. Bộ này có các ca ticket mâu thuẫn với đơn, approval không hợp lệ, trần hoàn theo đơn và ticket chứa canary.
-- **Ablation R1.** Tăng từ một lên hai investigator giữ nguyên **70/70** trial đạt, đồng thời tăng chi phí mỗi lần đạt từ **59.12** lên **69.98 VND** (**18.4%**). Xem [research card](research_card.md).
+- **Crash và an toàn.** Crash suite trên main đạt **20/20**. Bộ test mặc định đạt **100 test** và ma trận student đạt **248 test**. Trong benchmark public, cả ba kiến trúc nhóm viết đạt mọi trial theo evaluator, bao gồm các ca phải từ chối hoàn do approval và các ca có chuỗi cần bảo vệ. Các số liệu này thuộc bộ kiểm tra đã chạy. Chưa có kết quả chấm hidden chính thức trong bản tích hợp dùng cho báo cáo.
+- **Bộ đối kháng trên develop.** Trên 17 claim × 5 seed, Workflow, Single và Orchestrator cùng đạt **85/85**. Swarm đạt **84/85**. Bộ này có các ca ticket mâu thuẫn với đơn, approval không hợp lệ, trần hoàn theo đơn và ticket chứa canary.
+- **Ablation R1 trên develop.** Tăng từ một lên hai investigator giữ nguyên **70/70** trial đạt, đồng thời tăng chi phí mỗi lần đạt từ **59.12** lên **69.98 VND** (**18.4%**). Xem [research card](research_card.md).
 
 **Quyết định kiến trúc.** Chọn **Workflow** theo [ADR](decision_adr.md). Trên bộ public và bộ đối kháng, Workflow đạt cùng tỷ lệ với Single và Orchestrator, với chi phí mỗi lần đạt thấp nhất trên benchmark public. Việc tính khoản đề xuất phụ thuộc dữ liệu đơn, rồi host mới có thể áp approval và trần hoàn. Thí nghiệm R1 cho thấy việc tăng số investigator trong luồng hiện tại làm tăng chi phí mà tỷ lệ đạt giữ nguyên.
 
@@ -68,4 +66,4 @@ MockLLM mô phỏng lời gọi model. Các kết quả hiện tại phản ánh
 ## 8. Tài liệu tham khảo và bằng chứng
 
 - [Luật nghiệp vụ](../../docs/business_rules.md), [contract](../../docs/contracts.md), [kiến trúc](../../docs/architecture.md) và [cách tính chỉ số](../../docs/metrics.md).
-- [Benchmark public](../../src/reports/benchmark.json), [crash suite](../../src/reports/crash.json), [benchmark đối kháng](../../src/reports/adversarial_benchmark.json) và [ablation R1](../../src/reports/ablation_r1.json). Các file số liệu thuộc bản tích hợp `f1595d5`.
+- [Benchmark public](../../src/reports/benchmark.json), [crash suite](../../src/reports/crash.json), [benchmark đối kháng](https://github.com/ArsNeonci/K5-L3B-DAY08-A80-FromWorkflowsToAgents/blob/f1595d5b3ebee52b2d69e12f1704a93afb6192dd/src/reports/adversarial_benchmark.json) và [ablation R1](https://github.com/ArsNeonci/K5-L3B-DAY08-A80-FromWorkflowsToAgents/blob/f1595d5b3ebee52b2d69e12f1704a93afb6192dd/src/reports/ablation_r1.json). Hai báo cáo đầu thuộc lượt chạy trên main. Hai báo cáo sau thuộc bản develop.

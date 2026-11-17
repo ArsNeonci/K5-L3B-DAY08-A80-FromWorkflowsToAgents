@@ -6,8 +6,7 @@
 - Leader: Chu Quang Linh — 2A202603809 (kiêm C: Orchestrator).
 - Lớp: Chờ xác nhận giữa L3B trong tên repo hiện tại và L3A trong [SUBMISSION.md](SUBMISSION.md).
 - Repo nhóm: [K5-L3B-DAY08-A80-FromWorkflowsToAgents](https://github.com/ArsNeonci/K5-L3B-DAY08-A80-FromWorkflowsToAgents)
-- Bản draft được thành viên 5 đối chiếu: `develop` tại `f9a6c80`; không phải bản main hiện tại. Main đã tích hợp các nhánh cá nhân, không merge develop.
-- Nhánh nộp và commit chốt: Chờ trưởng nhóm xác nhận và đối chiếu với [ADR](report/team/decision_adr.md).
+- Nhánh dùng để kiểm tra hồ sơ: `main`. Code kiểm thử ở commit `11c6883`, khớp với [ADR](report/team/decision_adr.md). Báo cáo ablation dẫn riêng bản `develop` tại `f1595d5`.
 
 ## Thành viên
 
@@ -25,7 +24,7 @@
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
-| 1 — Vũ Duy Khánh | Swarm, tích hợp, benchmark và crash suite | `f9a6c80` (commit tích hợp đứng tên Khánh Vũ) | `src/tests/test_swarm_seed55.py`, `src/tests/test_adversarial_shapes.py` (thuộc draft develop, chưa có trên main) |
+| 1 — Vũ Duy Khánh | Swarm, tích hợp, benchmark và crash suite | `f9a6c80` (commit tích hợp đứng tên Khánh Vũ) | `src/tests/test_swarm_seed55.py` (đưa từ commit gốc vào hồ sơ kiểm tra cuối) |
 | 2 — Trương Thị Thu Hà | Workflow, kiểm tra ca đơn đã hoàn đủ (T13) | `ecd36fe` | `src/tests/test_workflow_ha.py` |
 | 3 — Đào Thị Ngọc Ánh | Vòng ReAct và kiểm thử Single agent | `883f520` (bàn giao Single từ draft `f9a6c80`) | `src/tests/test_single_shape.py` (có trong bản tích hợp) |
 | 4 — Chu Quang Linh | Trưởng nhóm, Orchestrator, handoff và test an toàn | `a42312c` (code và test), `b58ba74` (bàn giao) | `src/tests/test_orchestrator_shape.py` |
@@ -38,11 +37,11 @@ Báo cáo hiện có:
 - [Chu Quang Linh](report/team/2A202603809_ChuQuangLinh.md).
 - [Trương Thị Thu Hà](report/team/2A202603780_TruongThiThuHa.md).
 - [Nguyễn Minh Quân](report/team/2A202603794_NguyenMinhQuan.md).
-- [Dự thảo Single](report/team/CHUA_CO_MSSV_daoanh9503.md).
-- [Dự thảo Khánh](report/team/CHUA_CO_MSSV_KhanhVu.md).
+- [Đào Thị Ngọc Ánh](report/team/2A202603790_DaoThiNgocAnh.md).
+- [Vũ Duy Khánh](report/team/2A202603865_VuDuyKhanh.md).
 - [Bàn giao Orchestrator](report/team/orchestrator_handoff.md).
 
-Hai dự thảo cần cập nhật danh tính/tên file theo thông tin thành viên 5 vừa bổ sung. Việc bàn giao code từ draft không được coi là tự viết mới toàn bộ code.
+Hai báo cáo của Khánh và Ánh đã được bổ sung thông tin thành viên. Mỗi thành viên xác nhận phần khai báo dùng AI và tự đánh giá của mình trước khi nộp.
 
 ## Cá nhân
 
