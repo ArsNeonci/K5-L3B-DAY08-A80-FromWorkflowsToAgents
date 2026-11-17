@@ -46,3 +46,10 @@ Thuyết trình Shape A — Workflow (vai 2 trong bảng phân công của nhóm
 - Tự thực hiện quy trình git hoàn chỉnh: clone repo nhóm, tạo nhánh riêng, chỉ lấy đúng các file cần thiết, chạy test, commit và push mà không ảnh hưởng tới nhánh `main` và `develop` của nhóm.
 - Biến kết quả kỹ thuật thành phần trình bày dễ hiểu (sơ đồ 7 bước, hai ví dụ cụ thể, bảng số liệu), phù hợp với thế mạnh phân tích dữ liệu của tôi.
 - Hướng phát triển: lần sau tự viết thử một shape trước khi đọc bản của nhóm, để hiểu sâu hơn phần ReAct và handoff.
+
+
+## 7. Ghi chú đối chiếu trên bản tích hợp
+
+Báo cáo gốc được lấy riêng từ commit f1595d5; không merge develop. Các mô tả tự kiểm tra, công cụ Claude và slide ở trên là khai báo của tác giả trong báo cáo gốc, chưa được xác minh độc lập qua file slide.
+
+Trên main tại a0003e4, phiên kiểm tra tích hợp ghi nhận 90 test mặc định và 248 test student pass. Đây là kết quả chung, khác phạm vi 70/62 test tác giả ghi cho nhánh riêng. Benchmark và crash report chính thức chưa được commit trên main; các số liệu nhánh draft ở trên cần được thay bằng bằng chứng của bản nộp cuối khi tích hợp.
