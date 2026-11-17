@@ -1,7 +1,5 @@
 # Báo cáo cá nhân — tài khoản daoanh9503
 
-Bản dự thảo dựa trên Git; cần bổ sung họ tên, MSSV và đổi tên file đúng mẫu trước khi nộp.
-
 ## 1. Thông tin thành viên
 
 - Họ tên: Đào Thị Ngọc Ánh
