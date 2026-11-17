@@ -2,28 +2,22 @@
 
 ## Thông tin nhóm
 
-- Tên nhóm:
+- Tên nhóm: A80 (theo tên repo)
 - Leader: Chu Quang Linh — 2A202603809 (kiêm C: Orchestrator).
-- Lớp: L3A
-- Repo nhóm: `K5-L3A-DAY08-TenNhom-FromWorkflowsToAgents` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt:
+- Lớp: Chờ xác nhận giữa L3B trong tên repo hiện tại và L3A trong [SUBMISSION.md](SUBMISSION.md).
+- Repo nhóm: [K5-L3B-DAY08-A80-FromWorkflowsToAgents](https://github.com/ArsNeonci/K5-L3B-DAY08-A80-FromWorkflowsToAgents)
+- Bản draft được thành viên 5 đối chiếu: `develop` tại `f9a6c80`; không phải bản main hiện tại. Main đã tích hợp các nhánh cá nhân, không merge develop.
+- Nhánh nộp và commit chốt: Chờ trưởng nhóm xác nhận và đối chiếu với [ADR](report/team/decision_adr.md).
 
 ## Thành viên
 
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
-|   1 | Khánh Vũ (tên tác giả Git) | Chưa cung cấp | Chưa có email liên hệ được xác nhận | Chưa xác định | Draft code/test/tài liệu chung |
-|   2 | Trương Thị Thu Hà | 2A202603780 | 26ai.hattt@vinuni.edu.vn | TruongThuHa (theo báo cáo cá nhân) | A: Workflow; tách code chung, thêm test T13 |
-|   3 | Chưa xác nhận họ tên; tài khoản daoanh9503 | Chưa cung cấp | daoanh9503@gmail.com | daoanh9503 | B: Single; bàn giao code/test từ draft chung |
-|   4 | Chu Quang Linh | 2A202603809 | quanglinh1286@gmail.com | [ArsNeonci](https://github.com/ArsNeonci) | Leader kiêm C: Orchestrator; tích hợp, kiểm thử và chốt bài nộp |
-|   5 | Chưa cung cấp | Chưa cung cấp | Chưa cung cấp | Chưa cung cấp | Tổng hợp báo cáo (người dùng xác nhận); tạm bỏ qua báo cáo cá nhân trong đợt hoàn thiện này |
-
-Thông tin được đối chiếu từ Git và báo cáo cá nhân hiện có. Riêng email/GitHub của Chu Quang Linh lấy từ cấu hình Git và remote. Các ô chưa xác nhận phải được thành viên bổ sung trước khi nộp; tên tác giả commit không tự chứng minh người đó tự viết toàn bộ code. Không tính người soạn đề trong lịch sử starter là thành viên nhóm.
-
-Gợi ý chia vai:
-
-- Nhóm 6 người: integration; workflow; single agent; orchestrator; ledger/policy/crash; eval/report.
-- Nhóm 4 người: workflow + integration; single; orchestrator + handoff; ledger + evaluation.
+| 1 | Vũ Duy Khánh | 2A202603865 | 26ai.khanhvd2@vinuni.edu.vn | [khanhduyvu1](https://github.com/khanhduyvu1) | Swarm và tích hợp |
+| 2 | Trương Thị Thu Hà | 2A202603780 | 26ai.hattt@vinuni.edu.vn | [truongthuha](https://github.com/truongthuha) | Workflow |
+| 3 | Đào Thị Ngọc Ánh | 2A202603790 | 26ai.anhdtn@vinuni.edu.vn | [daoanh9503](https://github.com/daoanh9503) | Single agent |
+| 4 | Chu Quang Linh | 2A202603809 | 26ai.linhcq3@vinuni.edu.vn | [ArsNeonci](https://github.com/ArsNeonci) | Trưởng nhóm, Orchestrator, handoff và test an toàn |
+| 5 | Nguyễn Minh Quân | 2A202603794 | 26ai.quannm10@vinuni.edu.vn | [nmqdhtb](https://github.com/nmqdhtb) | Tài liệu và kiểm tra hồ sơ nộp |
 
 ## Bảng đóng góp
 
@@ -31,21 +25,24 @@ Gợi ý chia vai:
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
-| Trương Thị Thu Hà — 2A202603780 | A: Workflow; giữ code draft của Khánh Vũ, thêm test đơn đã hoàn đủ | `ecd36fe` — Workflow và test T13 | `src/tests/test_workflow_ha.py` |
-| daoanh9503 — chưa có họ tên/MSSV | B: Single; tiếp nhận code và test giống draft `f9a6c80`, chưa thấy sửa mới so với draft | `883f520` — bàn giao Single | `src/tests/test_single_shape.py` (tiếp nhận từ draft, chưa xác nhận tự viết) |
-| Chu Quang Linh — 2A202603809 | C: Orchestrator; tách triển khai từ develop, loại hỗ trợ ablation, kiểm chứng handoff/trace và approval | `a42312c` — code và test Orchestrator | `src/tests/test_orchestrator_shape.py` |
+| 1 — Vũ Duy Khánh | Swarm, tích hợp, benchmark và crash suite | `f9a6c80` (commit tích hợp đứng tên Khánh Vũ) | `src/tests/test_swarm_seed55.py`, `src/tests/test_adversarial_shapes.py` (thuộc draft develop, chưa có trên main) |
+| 2 — Trương Thị Thu Hà | Workflow, kiểm tra ca đơn đã hoàn đủ (T13) | `ecd36fe` | `src/tests/test_workflow_ha.py` |
+| 3 — Đào Thị Ngọc Ánh | Vòng ReAct và kiểm thử Single agent | `883f520` (bàn giao Single từ draft `f9a6c80`) | `src/tests/test_single_shape.py` (có trong bản tích hợp) |
+| 4 — Chu Quang Linh | Trưởng nhóm, Orchestrator, handoff và test an toàn | `a42312c` (code và test), `b58ba74` (bàn giao) | `src/tests/test_orchestrator_shape.py` |
+| 5 — Nguyễn Minh Quân | Tổng hợp bằng chứng, cập nhật `TEAM.md` và kiểm tra hồ sơ | `f824917` (tài liệu và test hồ sơ) | `src/tests/test_adr_required_fields.py` |
 
-Chu Quang Linh đồng thời là leader theo phân công cập nhật: điều phối tích hợp, kiểm tra xung đột và test chung, chủ trì quyết định kiến trúc/chốt commit, phối hợp thành viên 5 tổng hợp hồ sơ. Các merge `3f43b87`, `9ec463a`, `a0003e4` là bằng chứng tích hợp đã thực hiện; benchmark/ADR/research card và hồ sơ nộp cuối vẫn cần hoàn thiện, không coi phân công này là bằng chứng các việc đó đã xong. Thành viên 5 tiếp tục phụ trách tổng hợp báo cáo.
+Các nhánh của Hà, Ánh và Linh đã được tích hợp vào main qua `a0003e4` và các commit cha. Các sản phẩm riêng của draft develop chưa được coi là đã nộp. Leader Chu Quang Linh điều phối tích hợp, kiểm thử và chốt hồ sơ; Nguyễn Minh Quân phụ trách tổng hợp báo cáo.
 
-- Báo cáo cá nhân: [2A202603809_ChuQuangLinh.md](report/team/2A202603809_ChuQuangLinh.md).
-- Tài liệu bàn giao kỹ thuật: [orchestrator_handoff.md](report/team/orchestrator_handoff.md).
-- Báo cáo Hà: [2A202603780_TruongThiThuHa.md](report/team/2A202603780_TruongThiThuHa.md), lấy riêng từ `f1595d5` và bổ sung ghi chú phạm vi kiểm chứng; không merge develop.
-- Dự thảo Single: [CHUA_CO_MSSV_daoanh9503.md](report/team/CHUA_CO_MSSV_daoanh9503.md).
-- Dự thảo Khánh Vũ: [CHUA_CO_MSSV_KhanhVu.md](report/team/CHUA_CO_MSSV_KhanhVu.md). Commit `f9a6c80` chứa 23 file draft, gồm test Swarm/đối kháng/tài liệu. Commit này chưa nằm trong lịch sử main; các sản phẩm chưa tích hợp không được tự coi là đã nộp. Chưa thêm dòng đóng góp hợp lệ cho phần đó vào bảng trên.
-- Thành viên 5 phụ trách tổng hợp báo cáo theo xác nhận của người dùng; tạm chưa lập báo cáo cá nhân. Không gán nhánh `quan-workflow` cho người này khi chưa có bằng chứng.
-- Các merge `3f43b87`, `9ec463a`, `a0003e4` do tài khoản ArsNeonci tích hợp C, B, A; không coi chúng là bằng chứng leader đã tự viết ba kiến trúc.
+Báo cáo hiện có:
 
-Các file mang tiền tố `CHUA_` là dự thảo để xác nhận, cần đổi tên đúng `MSSV_HoTen.md` trước khi nộp. Bảng hiện tại chưa chứng minh đủ yêu cầu mỗi người có một test tự thêm/sửa; đặc biệt Single cần xác nhận phần đóng góp kỹ thuật riêng, Khánh Vũ cần xác định phần sẽ được nộp. Hồ sơ thành viên 5 được xử lý sau theo yêu cầu người dùng; yêu cầu báo cáo và đóng góp của đề bài vẫn áp dụng khi nộp chính thức.
+- [Chu Quang Linh](report/team/2A202603809_ChuQuangLinh.md).
+- [Trương Thị Thu Hà](report/team/2A202603780_TruongThiThuHa.md).
+- [Nguyễn Minh Quân](report/team/2A202603794_NguyenMinhQuan.md).
+- [Dự thảo Single](report/team/CHUA_CO_MSSV_daoanh9503.md).
+- [Dự thảo Khánh](report/team/CHUA_CO_MSSV_KhanhVu.md).
+- [Bàn giao Orchestrator](report/team/orchestrator_handoff.md).
+
+Hai dự thảo cần cập nhật danh tính/tên file theo thông tin thành viên 5 vừa bổ sung. Việc bàn giao code từ draft không được coi là tự viết mới toàn bộ code.
 
 ## Cá nhân
 
