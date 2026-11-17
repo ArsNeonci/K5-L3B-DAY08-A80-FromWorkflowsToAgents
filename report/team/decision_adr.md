@@ -1,30 +1,38 @@
 # Decision record
 
-Điền sau dấu `:` trên cùng dòng, không xóa nhãn. Giảng viên và `python -m lab8.check_submission` (chạy trong `src/`) đọc các dòng này bằng máy. Không đổi tên hay dời file này khỏi `report/team/`.
-`Shape chọn` phải là đúng một trong: `workflow`, `single`, `orchestrator`, `swarm`. Đây là shape được chấm cổng hidden.
+- Shape chọn: workflow
+- Commit hash: `f1595d5`
+- Run id dẫn chứng: R-workflow-C-002-s55 (đạt, denied), R-swarm-C-002-s55 (trượt, resolved), R-workflow-C-014-s11 (đạt, resolved)
+- Pass rate / pass^5 / seed min-max / variance: 1.000 / 1.000 / 1.000–1.000 / 0.000000
+- Cost per success (mô phỏng, VND): 28.80
+- Crash safety: 20/20 theo crash suite của bản tích hợp
+- Secret leak / approval bypass: 0 / 0 ghi nhận cho Workflow trên bộ public và bộ đối kháng, trong phạm vi các ca và điều kiện của evaluator
 
-- Shape chọn:
-- Commit hash:
-- Run id dẫn chứng:
-- Pass rate / pass^5 / seed min-max / variance:
-- Cost per success (mô phỏng, VND):
-- Crash safety:
-- Secret leak / approval bypass:
-
-Ví dụ một dòng đã điền: `- Shape chọn: workflow`, `- Crash safety: 20/20 (src/reports/crash.json)`.
+Commit trên là bản tích hợp `develop` chứa code và bằng chứng dùng cho quyết định này. Khi chốt hồ sơ, đối chiếu lại hash với commit nộp và cập nhật số liệu nếu phiên bản code dùng để chấm thay đổi.
 
 ## Vì sao shape này
 
-Viết 1 đoạn. So cùng corpus và cùng seed, không so với một lần chạy lẻ.
+Chọn **Workflow** vì đạt cùng độ đúng và độ ổn định với Single agent và Orchestrator trên bộ public, đồng thời có chi phí thấp nhất. Bốn kiến trúc chạy cùng 14 claim và 5 seed (11, 22, 33, 44, 55), cùng bảng giá và evaluator.
+
+| Kiến trúc | Trial đạt | Pass rate | Pass^5 | Seed min–max | Phương sai | VND/lần đạt |
+|---|---:|---:|---:|---:|---:|---:|
+| workflow | 70/70 | 1.000 | 1.000 | 1.000–1.000 | 0.000000 | 28.80 |
+| single | 70/70 | 1.000 | 1.000 | 1.000–1.000 | 0.000000 | 53.89 |
+| orchestrator | 70/70 | 1.000 | 1.000 | 1.000–1.000 | 0.000000 | 59.12 |
+| swarm | 69/70 | 0.986 | 0.929 | 0.929–1.000 | 0.000816 | 49.57 |
+
+Bộ đối kháng của nhóm cho kết quả Workflow, Single và Orchestrator cùng đạt 85/85, Swarm đạt 84/85. Ở C-002, ticket khai trễ 5 ngày, dữ liệu đơn ghi 2 ngày. Workflow từ chối đúng ở seed 55, còn Swarm trả `resolved`. Ở C-014, Workflow chuyển khoản đề xuất 150.000 VND cho host. Evaluator xác nhận ledger ghi phần chênh lệch 120.000 VND sau khi trừ 30.000 VND đã hoàn.
 
 ## Có đáng đổi lấy multi-agent không
 
-Nếu pass nhỉnh hơn mà cost và variance cao hơn, nhóm giữ hay đổi? Điều kiện nào làm quyết định đảo lại?
+Giữ Workflow cho phạm vi hiện tại. Khi tăng số investigator trong Orchestrator từ một lên hai, số trial đạt giữ ở 70/70, còn chi phí mỗi lần đạt tăng từ 59.12 lên 69.98 VND (+18.4%). Luồng tính tiền cần dữ liệu đơn trước, sau đó host mới kiểm approval và trần hoàn. Nhóm sẽ đánh giá lại khi có bước điều tra độc lập có thể chạy song song, hoặc khi ticket mơ hồ đòi hỏi khả năng trích xuất của model thật. [Research card](research_card.md)
 
 ## Trace và bằng chứng
 
-Trace của nhóm ghi những event nào? Field nào cố ý **không** ghi, và vì sao? Nếu trace nằm ngoài chỗ scanner quét được, đội security chứng minh thế nào là hệ thống không lộ secret?
+Workflow ghi sự kiện `claim`, `order`, `quote`, `host`, `result` theo nhánh thực thi. Khi mô phỏng crash, Workflow ghi `crash` rồi truyền tiếp `InjectedCrash`. Trace mới được ghi theo `run_id` trong thư mục `traces/` để evaluator kiểm tra. Các trường như ticket thô, `parent_secret`, header, SĐT, địa chỉ, ghi chú nội bộ và prompt được loại khỏi trace để hạn chế lộ dữ liệu. Host giữ quyền duy nhất ghi khoản hoàn, kiểm approval của đúng claim và chống ghi trùng theo claim.
+
+Nguồn đối chiếu tại `f1595d5` gồm [benchmark public](../../src/reports/benchmark.json), [crash suite](../../src/reports/crash.json), [benchmark đối kháng](../../src/reports/adversarial_benchmark.json) và [ablation R1](../../src/reports/ablation_r1.json). [Báo cáo nhóm](group_report.md)
 
 ## Giới hạn
 
-MockLLM không phải model sản xuất. Latency để `unavailable`. Không sửa JSON cho đủ 0.75.
+MockLLM mô phỏng lời gọi model, latency là `unavailable` và chi phí là giá mô phỏng. Bộ đối kháng do nhóm xây dựng nên có thể cùng điểm mù với các triển khai. Bản tích hợp chưa có kết quả chấm hidden chính thức.
