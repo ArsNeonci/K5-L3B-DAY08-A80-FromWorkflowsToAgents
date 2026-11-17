@@ -11,6 +11,17 @@
 
 ## 2. Phần việc phụ trách
 
+### Bonus B3 — Kiểm thử verifier và độ bền
+
+- Được giao rà `src/tests/test_bonus_swarm_verified.py`, đặc biệt `test_verifier_checks_all_three_required_fields`, `test_crash_resume_and_repeated_retry_are_safe`, `test_early_return_trace_contract`.
+- Kiểm tra phát hiện sai `delay_days`, `status`, `damage_verified`, tối đa một lần sửa; crash tại ba điểm rồi resume/retry vẫn một refund và một audit committed.
+- Rà nhánh thiếu mã đơn, ngoài quyền truy cập, claim không tồn tại và trace hợp lệ; đọc test approval trong bộ đối kháng.
+- Bàn giao: lệnh, output thực tế, giải thích test bắt lỗi gì; bổ sung regression có ý nghĩa nếu tìm được lỗi mới.
+
+Bản bonus chung: `1be14a8`, có hỗ trợ Codex; phiên kiểm chứng chung có 62 test bonus pass. Chưa coi số này là xác nhận Ánh đã tự chạy trên máy riêng. Thành viên cần ghi việc kiểm chứng và dùng AI thực tế. Câu cần giải thích: làm sao chứng minh sửa trước khi ghi tiền, và tại sao retry sau crash không hoàn lần hai?
+
+### Phần bài chính
+
 Commit `883f520` đưa triển khai Single và test riêng lên nhánh từ starter. Hai file được bàn giao là `src/lab8/shapes/single.py` và `src/tests/test_single_shape.py`.
 
 ## 3. Đóng góp cụ thể

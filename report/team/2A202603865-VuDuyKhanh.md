@@ -10,6 +10,17 @@
 
 ## 2. Phần việc phụ trách
 
+### Bonus B3 — Swarm gốc và baseline
+
+- Được giao rà baseline Swarm, giải thích lỗi tin số ngày trong ticket ở seed 55; so bản gốc với `src/bonus/swarm_verified.py` để xác nhận giữ peer/parse/draft, investigator và host.
+- Đối chiếu Budget, số model/tool calls và test `test_no_mismatch_keeps_swarm_calls_and_only_adds_read_cost` trong `src/tests/test_bonus_swarm_verified.py`; đọc thêm `src/tests/test_swarm_seed55.py`.
+- Bàn giao: mô tả trước/sau sửa, chi phí thêm và giải thích vì sao verifier vẫn chưa tạo lợi thế hơn Workflow trên task hiện tại.
+- Câu cần giải thích: vì sao seed 55 có thể làm Swarm trả sai, còn seed 11 không mắc cùng lỗi?
+
+Bản bonus chung: `1be14a8`, có hỗ trợ Codex. Kết quả chung đã đo: public Swarm 69/70, verified 70/70; đối kháng 44/50 và 50/50. Đây không phải khai báo cá nhân đã tự chạy. Thành viên cần ghi xác nhận rà soát, output thực chạy và commit thay đổi có ý nghĩa nếu có. Không nhận phần code do người khác/AI tạo là tự viết mới.
+
+### Phần bài chính
+
 Commit draft bổ sung triển khai A/B/C, test theo shape, bộ đối kháng, test điểm yếu Swarm seed 55, kiểm tra tài liệu, script xuất fixture, báo cáo benchmark/crash/ablation và nội dung báo cáo nhóm.
 
 ## 3. Đóng góp cụ thể

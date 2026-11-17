@@ -37,13 +37,27 @@ Báo cáo hiện có:
 - [Chu Quang Linh](report/team/2A202603809_ChuQuangLinh.md).
 - [Trương Thị Thu Hà](report/team/2A202603780_TruongThiThuHa.md).
 - [Nguyễn Minh Quân](report/team/2A202603794_NguyenMinhQuan.md).
-- [Đào Thị Ngọc Ánh](report/team/2A202603790_DaoThiNgocAnh.md).
-- [Vũ Duy Khánh](report/team/2A202603865_VuDuyKhanh.md).
+- [Đào Thị Ngọc Ánh](report/team/2A202603790-DaoThiNgocAnh.md).
+- [Vũ Duy Khánh](report/team/2A202603865-VuDuyKhanh.md).
 - [Bàn giao Orchestrator](report/team/orchestrator_handoff.md).
 
 Hai báo cáo của Khánh và Ánh đã được bổ sung thông tin thành viên. Mỗi thành viên xác nhận phần khai báo dùng AI và tự đánh giá của mình trước khi nộp.
 
-## Cá nhân
+## Phân công bonus B3
+
+Bản triển khai chung và bằng chứng bonus nằm tại `1be14a8`, được hoàn thiện với hỗ trợ Codex. Bảng sau giao trách nhiệm rà soát, kiểm chứng và trình bày; không tự coi việc phân công là bằng chứng từng người đã tự viết code hoặc tự chạy test. Giữ nguyên các commit đóng góp bài chính ở bảng trên; bổ sung commit cá nhân khi có công việc thực tế mới.
+
+| Thành viên | Trách nhiệm bonus | File/bằng chứng cần đối chiếu | Tiêu chí bàn giao |
+| --- | --- | --- | --- |
+| Vũ Duy Khánh — 2A202603865 | Swarm gốc và baseline; giải thích seed 55, so peer/parse/draft và tool cost trước/sau verifier | `src/bonus/swarm_verified.py`; `src/tests/test_swarm_seed55.py`; `test_no_mismatch_keeps_swarm_calls_and_only_adds_read_cost` trong `src/tests/test_bonus_swarm_verified.py` | Chỉ ra lỗi gốc, phần giữ nguyên và chi phí thêm; không sửa reference Swarm |
+| Trương Thị Thu Hà — 2A202603780 | Rà 10 claim đối kháng và đáp án theo luật; đối chiếu Workflow | `src/bonus/build_cases.py`, `cases.jsonl`, `world.json`; `test_hand_labelled_adversarial_cases` | Giải thích từng quote/refund; bao phủ biên 3 ngày, stacking, trạng thái đơn và thiếu approval; không sinh nhãn bằng quote |
+| Đào Thị Ngọc Ánh — 2A202603790 | Kiểm thử verifier, một vòng sửa, retry/crash và early return | `src/tests/test_bonus_swarm_verified.py`: `test_verifier_checks_all_three_required_fields`, `test_crash_resume_and_repeated_retry_are_safe`, `test_early_return_trace_contract` | Rà phát hiện sai delay/status/damage và chạy được bộ test; ghi đúng output thực tế |
+| Chu Quang Linh — 2A202603809 | Leader; verifier, scope principal, bảo mật trace, tính Budget và tích hợp | `src/bonus/swarm_verified.py`; `test_overstated_ticket_is_fixed_before_any_refund`, `test_ticket_canary_never_enters_output_or_trace` | Kiểm tra trước cả denied quote 0 và ghi tiền; giữ host duy nhất ghi; chốt test và hồ sơ chung |
+| Nguyễn Minh Quân — 2A202603794 | Benchmark, safety sweep, bảng số liệu và báo cáo bonus | `src/bonus/evaluate.py`; `src/reports/bonus_b3_public.json`, `bonus_b3_adversarial.json`; `report/team/bonus_report.md` | So cùng corpus/seed; đối chiếu pass/pass^5/variance/cost và safety; ghi giới hạn MockLLM, điều kiện hidden |
+
+Kết quả chung đã kiểm chứng trong phiên hỗ trợ: 62 test bonus, 162 test mặc định và 248 test student pass; kiểm tra hồ sơ 0 FAIL. Lệnh tái lập ở [README bonus](src/bonus/README.md). Mỗi thành viên xác nhận phần đã rà/chạy, cách dùng AI và đóng góp mới trong báo cáo cá nhân trước khi nộp. Điểm bonus vẫn phụ thuộc gate hidden do giảng viên chấm.
+
+## Báo cáo cá nhân theo mẫu
 
 Mỗi thành viên đồng thời tạo một báo cáo riêng trong `report/` theo dạng:
 

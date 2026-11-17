@@ -9,6 +9,17 @@
 
 ## 2. Phần việc phụ trách
 
+### Bonus B3 — Dữ liệu đối kháng và đáp án
+
+- Được giao rà 10 claim và nhãn ở `src/bonus/cases.jsonl`, `world.json`, cùng kịch bản `build_cases.py`; đối chiếu trực tiếp luật nghiệp vụ, không dùng hàm quote để sinh đáp án.
+- Kiểm tra các ca thực tế trễ 2 nhưng ticket nói quá, trễ 4 nhưng ticket nói ít, biên 3 ngày, hỏng đã/chưa verify, stacking lấy max, đơn hủy/đang giao và thiếu approval.
+- Đối chiếu Workflow với nhãn và test `test_hand_labelled_adversarial_cases` trong `src/tests/test_bonus_swarm_verified.py`.
+- Bàn giao: giải thích từng số quote/refund và tình huống cần `policy_denied`; nêu điểm mù có thể có của bộ dữ liệu tự xây.
+
+Bản bonus chung: `1be14a8`, có hỗ trợ Codex. Các nhãn là hằng số ghi theo luật, chưa có xác nhận Hà đã tự rà toàn bộ. Thành viên cần ghi kết quả rà/chạy thật và việc dùng AI; không biến phân công thành tuyên bố đã hoàn thành. Câu cần giải thích: vì sao claim 08 có quote 35.000 VND nhưng refund 0, còn claim 07 lấy 150.000 thay vì cộng ship và damage?
+
+### Phần bài chính
+
 Thuyết trình Shape A — Workflow (vai 2 trong bảng phân công của nhóm), kèm một test bổ sung cho Workflow.
 
 - Code `src/lab8/shapes/workflow.py` và `src/tests/test_workflow_shape.py` do bạn Khánh Vũ viết (nhánh `develop`). Tôi không viết lại phần này.

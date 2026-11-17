@@ -10,6 +10,17 @@
 
 ## 2. Phần việc phụ trách
 
+### Bonus B3 — Verifier và tích hợp (leader)
+
+- Phụ trách rà `src/bonus/swarm_verified.py`: đọc lại order theo principal, đối chiếu mọi `ORDER_FIELDS`, quote lại tối đa một lần khi sai, kiểm tra trước cả nhánh quote 0 và trước `issue_refund`.
+- Kiểm tra allowlist/trace, không ghi ticket hoặc PII, tính đủ chi phí lookup và quote sửa; giữ nguyên host và reference Swarm.
+- Đối chiếu `test_overstated_ticket_is_fixed_before_any_refund` và `test_ticket_canary_never_enters_output_or_trace` trong `src/tests/test_bonus_swarm_verified.py`; phối hợp tích hợp phần rà soát của các thành viên.
+- Bàn giao: chốt code, kết quả test chung, an toàn và giới hạn của verifier; phối hợp Quân hoàn thiện báo cáo.
+
+Commit triển khai bonus chung `1be14a8` được tạo trong phiên hỗ trợ Codex; đã chạy 62 test bonus, 162 test mặc định, 248 test student và kiểm tra hồ sơ 0 FAIL. Không gán các kết quả chạy bằng công cụ thành bằng chứng thành viên tự chạy ngoài phiên. Câu cần giải thích: verifier tin order/policy và tool nào, và vì sao không phát hiện được lỗi nội tại của DB/quote khi các dữ kiện vẫn khớp?
+
+### Phần bài chính
+
 Bàn giao kiến trúc C độc lập trên bản starter: orchestrator nhận claim, giao điều tra qua handoff đã lọc, nhận báo cáo từ investigator chỉ đọc, rồi gọi host để xử lý refund. Kèm test an toàn, mô tả kỹ thuật và bằng chứng chạy lại.
 
 Theo phân công cập nhật, kiêm leader: điều phối tích hợp các nhánh, kiểm tra xung đột và test chung, chủ trì chọn kiến trúc/chốt commit, phối hợp thành viên 5 tổng hợp báo cáo và chuẩn bị bài nộp.

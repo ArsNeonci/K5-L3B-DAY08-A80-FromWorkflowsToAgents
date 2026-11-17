@@ -8,6 +8,8 @@
 
 ## Tái lập và thiết kế
 
+Phân công rà soát/kiểm chứng B3: Khánh — baseline Swarm; Hà — dữ liệu và nhãn; Ánh — test/verifier/crash; Linh — verifier, bảo mật và tích hợp (leader); Quân — benchmark/safety và báo cáo. Chi tiết file, test và tiêu chí bàn giao: [TEAM.md](../../TEAM.md#phân-công-bonus-b3). Bản triển khai chung là commit `1be14a8`; phân công không thay thế xác nhận đóng góp thực tế của từng người.
+
 Chạy từ `src/`, sau khi cài `requirements.txt`:
 
 ```powershell
