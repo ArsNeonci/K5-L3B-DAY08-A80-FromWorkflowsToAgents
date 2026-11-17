@@ -31,7 +31,7 @@
 | 5 — Nguyễn Minh Quân | Tổng hợp bằng chứng, cập nhật `TEAM.md` và kiểm tra hồ sơ | `f824917` (tài liệu và test hồ sơ) | `src/tests/test_adr_required_fields.py` |
 
 
-Báo cáo hiện có:
+## Cá nhân
 
 - [Chu Quang Linh](report/team/2A202603809_ChuQuangLinh.md).
 - [Trương Thị Thu Hà](report/team/2A202603780_TruongThiThuHa.md).
